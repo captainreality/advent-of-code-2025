@@ -58,13 +58,23 @@ func readInput(path string) ([]string, error) {
 }
 
 func nextVal(currentVal int, input string) (int, error) {
-	absVal, err := strconv.Atoi(input[1:])
+	inVal, err := strconv.Atoi(input[1:])
 	if err != nil {
 		return 0, err
 	}
+	result := 0
 	if strings.HasPrefix(input, "L") {
-		return (currentVal - absVal) % 100, nil
+		result = currentVal - inVal
 	} else {
-		return (currentVal + absVal) % 100, nil
+		result = currentVal + inVal
 	}
+	result = result % 100
+
+	// At this point, result could be negative
+	if result < 0 {
+		result = 100 + result
+	}
+
+	return result, nil
+
 }

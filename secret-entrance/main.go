@@ -33,7 +33,6 @@ func main() {
 		}
 	}
 	fmt.Println("The actual password is:", zeroCount)
-
 }
 
 func readInput(path string) ([]string, error) {
@@ -76,5 +75,4 @@ func nextVal(currentVal int, input string) (int, error) {
 	}
 
 	return result, nil
-
 }

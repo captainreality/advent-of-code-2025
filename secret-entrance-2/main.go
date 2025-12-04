@@ -33,7 +33,6 @@ func main() {
 		totalCrossings += crossings
 	}
 	fmt.Println("The actual password is:", totalCrossings)
-
 }
 
 func readInput(path string) ([]string, error) {
@@ -81,5 +80,4 @@ func nextVal(currentVal int, input string) (nextVal int, crossings int, err erro
 	}
 
 	return nextVal, crossings, nil
-
 }
